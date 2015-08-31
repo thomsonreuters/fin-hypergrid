@@ -1,0 +1,33 @@
+<!--
+
+The `fin-rectangle` element provides a simple point and rectangle library for the [fin-canvas](http://github.com/stevewirts/fin-canvas) and [fin-hypergrid](http://github.com/openfin/fin-hypergrid) components.  fin-rectangle is a factory object with 2 namespaces; point and rectangle.
+
+<br>
+<br>
+
+##library global(static) functions
+### global.point.create(x,y) - returns an instance of point
+### global.rectangle.create(originX,originY,extentX,extentY) - returns an instance of rectangle
+### global.rectangle.contains(myRect,x,y) - test for contains without needing to create a point
+
+<br>
+<br>
+
+Example using src:
+
+    var global = document.createElement('fin-rectangle');
+
+    var myRectangle = global.rectangle.create(0,0,100,100);
+    var myPoint = global.point.create(10,10);
+
+    console.log(myRectangle.contains(myPoint));
+    console.log(global.rectangle.contains(myRectangle, 10, 10));
+
+@group OpenFin hypergrid
+@element fin-rectangle
+@homepage http://github.com/stevewirts/fin-rectangle
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="stylesheet" type="text/css" href="fin-rectangle.css">
+<polymer-element name="fin-rectangle">
+  <script>

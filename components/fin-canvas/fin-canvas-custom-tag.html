@@ -1,0 +1,74 @@
+<!--
+
+The `fin-canvas-custom-tag` element is a custom web component canvas control and includes a small ui framework for building custom components that render on the canvas.  This element exists as generalization on canvas to support the openfin [fin-hypergrid](http://github.com/openfin/fin-hypergrid) component.
+
+@group OpenFin hypergrid
+@element fin-canvas-custom-tag
+@homepage http://github.com/stevewirts/fin-canvas
+-->
+
+
+<link rel="import" href="fin-canvas-component.html">
+<link rel="import" href="fin-canvas.html">
+
+<polymer-element name="fin-canvas-custom-tag">
+  <template>
+    <fin-canvas id="canvas">
+      <fin-canvas-component id="painter"></fin-canvas-component>
+    </fin-canvas>
+  </template>
+  <script>
+  (function(){
+    Polymer({
+      ready: function() {
+        var canvas = this.$.canvas;
+        var painter = this.$.painter;
+        // canvas.addEventListener('fin-click', function(e) {
+        //   console.log('click ', e);
+        // });
+        // canvas.addEventListener('fin-dblclick', function(e) {
+        //   console.log('dblclick ', e);
+        // });
+        // canvas.addEventListener('fin-tap', function(e) {
+        //   console.log('tap ', e);
+        // });
+        // canvas.addEventListener('fin-hold', function(e) {
+        //   console.log('hold ', e);
+        // });
+        // canvas.addEventListener('fin-holdpulse', function(e) {
+        //   console.log('holdpulse count: ' + e.detail.count,e);
+        // });
+        // canvas.addEventListener('fin-release', function(e) {
+        //   console.log('release ', e);
+        // });
+        canvas.addEventListener('fin-flick', function(e) {
+          console.log('flick ', e);
+        });
+        // canvas.addEventListener('fin-trackstart', function(e) {
+        //   console.log('trackstart ' +  e.detail.mouse.x + ', ' + e.detail.mouse.y,e);
+        // });
+        // canvas.addEventListener('fin-track', function(e) {
+        //   console.log('track ' +  e.detail.mouse.x + ', ' + e.detail.mouse.y,e);
+        // });
+        // canvas.addEventListener('fin-trackend', function(e) {
+        //   console.log('trackend ' +  e.detail.mouse.x + ', ' + e.detail.mouse.y,e);
+        // });
+        painter.paint = function(gc) {
+            try {
+                gc.save();
+                var rect = this.getBounds();
+                var lw = 5;
+                gc.beginPath();
+                gc.lineWidth = lw;
+                gc.strokeStyle = 'pink';
+                gc.rect(lw / 2, lw / 2, rect.width() - lw, rect.height() - lw);
+                gc.stroke();
+            } finally {
+                gc.restore();
+            }
+        };
+      }
+    });
+  })();
+  </script>
+</polymer-element>

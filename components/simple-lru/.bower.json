@@ -1,0 +1,24 @@
+{
+  "name": "simple-lru",
+  "main": "simple-lru.js",
+  "version": "0.0.3",
+  "homepage": "https://github.com/smagch/simple-lru",
+  "authors": [
+    "smagch <smagch@gmail.com>"
+  ],
+  "description": "minimal Least Recently Used Cache",
+  "keywords": [
+    "cache",
+    "LRU"
+  ],
+  "license": "MIT",
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.3",
+    "commit": "fe9cffc2f9cda60a9854ccadf178dce549718872"
+  },
+  "_source": "git://github.com/smagch/simple-lru.git",
+  "_target": "~0.0.3",
+  "_originalSource": "simple-lru"
+}

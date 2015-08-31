@@ -1,0 +1,35 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="base-e.html">
+<polymer-element name="sub-e" extends="base-e">
+  <template>
+    <shadow></shadow>
+    <h1>sub</h1>
+  </template>
+  <script>
+
+'use strict';
+(function() {
+
+    Polymer('sub-e', {
+        created: function() {
+          this.super();
+          console.log('sub-created');
+        },
+        ready: function() {
+          this.super();
+          console.log('sub-ready');
+        },
+        attached: function () {
+          this.super();
+          console.log('sub-attached');
+        },
+        domReady: function() {
+          this.super();
+          console.log('sub-domReady');
+        },
+    });
+
+})();
+
+  </script>
+</polymer-element>

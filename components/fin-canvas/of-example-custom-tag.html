@@ -1,0 +1,55 @@
+<!--
+
+The `of-example-custom-tag` element is a custom web component canvas control and includes a small ui framework for building custom components that render on the canvas.  This element exists as generalization on canvas to support the openfin [fin-hypergrid](http://github.com/openfin/fin-hypergrid) component.
+
+@group OpenFin hypergrid
+@element of-example-custom-tag
+@homepage http://github.com/stevewirts/fin-canvas
+-->
+
+<link rel="import" href="fin-canvas-component.html">
+<link rel="import" href="fin-canvas-component-composite.html">
+<link rel="import" href="fin-canvas-component-border.html">
+<link rel="import" href="fin-canvas.html">
+
+<polymer-element name="of-example-custom-tag">
+  <template>
+    <fin-canvas touch-action="none">
+
+        <fin-canvas-component-border color="green">
+          <fin-canvas-component-composite>
+            <fin-canvas-component-border color="red" layoutProperties="[0.25,0, 0.50,0, 0.50,0, 0.25,0]">
+
+        <fin-canvas-component-border color="green">
+          <fin-canvas-component-composite>
+            <fin-canvas-component-border color="red" layoutProperties="[0.25,0, 0.50,0, 0.50,0, 0.25,0]"></fin-canvas-component-border>
+            <fin-canvas-component-border color="blue" layoutProperties="[0.5,0, 0.75,0, 0.75,0, 0.5,0]"></fin-canvas-component-border>
+          </fin-canvas-component-composite>
+        </fin-canvas-component-border>
+
+
+          </fin-canvas-component-border>
+            <fin-canvas-component-border color="blue" layoutProperties="[0.5,0, 0.75,0, 0.75,0, 0.5,0]">
+
+
+        <fin-canvas-component-border color="green">
+          <fin-canvas-component-composite>
+            <fin-canvas-component-border color="red" layoutProperties="[0.25,0, 0.50,0, 0.50,0, 0.25,0]"></fin-canvas-component-border>
+            <fin-canvas-component-border color="blue" layoutProperties="[0.5,0, 0.75,0, 0.75,0, 0.5,0]"></fin-canvas-component-border>
+          </fin-canvas-component-composite>
+        </fin-canvas-component-border>
+
+
+          </fin-canvas-component-border>
+          </fin-canvas-component-composite>
+        </fin-canvas-component-border>
+    </fin-canvas>
+  </template>
+  <script>
+  (function(){
+    Polymer({
+
+    });
+  })();
+  </script>
+</polymer-element>

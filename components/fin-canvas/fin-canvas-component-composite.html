@@ -1,0 +1,55 @@
+<!--
+
+The `fin-canvas-component-composite` element is a custom web component canvas control and includes a small ui framework for building custom components that render on the canvas.  This element exists as generalization on canvas to support the openfin [fin-hypergrid](http://github.com/openfin/fin-hypergrid) component.
+
+@group OpenFin hypergrid
+@element fin-canvas-component-composite
+@homepage http://github.com/stevewirts/fin-canvas
+-->
+<link rel="import" href="../fin-rectangle/fin-rectangle.html">
+<link rel="import" href="fin-canvas-component.html">
+<link rel="import" href="fin-canvas-layout-fractional.html">
+<polymer-element name="fin-canvas-component-composite" class="fin-canvas-component" extends="fin-canvas-component">
+<template>
+  </template>
+  <script>
+
+'use strict';
+
+(function() {
+
+    Polymer('fin-canvas-component-composite', { /* jshint ignore:line */
+        created: function() {
+            this.g = document.createElement('fin-rectangle');
+            this.layoutManager = document.createElement('fin-canvas-layout-fractional');
+        },
+        getLayoutManager: function() {
+            return this.layoutManager;
+        },
+        setLayoutManager: function(manager) {
+            this.layoutManager = manager;
+        },
+        paint: function(gc) {
+            var components = this.getComponents();
+            for (var c = 0; c < components.length; c++) {
+                var comp = components[c];
+                comp._paint(gc);
+            }
+        },
+        setBounds: function(rectangle) {
+            var components = this.getComponents();
+            this.bounds = rectangle;
+            var rect = this.g.rectangle.create(0, 0, rectangle.width(), rectangle.height());
+            this.getLayoutManager().layoutComponentsIn(rect, components);
+        },
+        getComponents: function() {
+            var comp = this.children;
+            //comp.setParent(this);
+            return comp;
+        }
+    });
+
+})(); /* jslint ignore:line */
+
+  </script>
+</polymer-element>

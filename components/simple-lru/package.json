@@ -1,0 +1,33 @@
+{
+  "name": "simple-lru",
+  "description": "minimal Least Recently Used Cache",
+  "version": "0.0.3",
+  "keywords": ["cache", "LRU"],
+  "author": "Tomoya Shimaguchi <smagch@gmail.com>",
+  "scripts": {
+    "test": "make test"
+  },
+  "main": "simple-lru.js",
+  "repository": "git://github.com/smagch/simple-lru.git",
+  "devDependencies": {
+    "mocha": "~1.18",
+    "expect.js": "~0.3",
+    "weak": "~0.3",
+    "uglify-js": "2.4.13",
+    "requirejs": "~2.1.11"
+  },
+  "testling": {
+    "harness": "mocha",
+    "browsers": [
+      "ie/6..latest",
+      "chrome/22..latest",
+      "firefox/16..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
+  },
+  "license": "MIT"
+}

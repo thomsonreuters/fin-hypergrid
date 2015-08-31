@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>fin-vampire-bar Demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="fin-vampire-bar.html">
+
+  <style>
+      .demo-scroll-surface {
+        width: 300px;
+        height: 100px;
+        background-color: indianred;
+        position: relative;
+      }
+    </style>
+
+</head>
+<body unresolved>
+
+  <p>An example of using <code>&lt;fin-vampire-bar></code>:</p>
+
+
+  <div class="demo-scroll-surface">
+      <fin-vampire-bar ></fin-vampire-bar>
+      <fin-vampire-bar horizontal></fin-vampire-bar>
+    </div>
+    <script>
+
+      var dm = {
+        max: 70000,
+        current: 0,
+        min: 0,
+        step: 1,//smallest increment
+        page: 40 //data lines per page
+      };
+
+    var self = {
+      getVScrollValue: function(){
+        return 1;
+      },
+      setVScrollValue : function(value){
+        return 'set me to' + value;
+      },
+      getHScrollValue: function(){
+        return 1;
+      },
+      setHScrollValue : function(value){
+        return 'set me to' + value;
+      }
+    };
+
+    var scrollbars = document.querySelectorAll('fin-vampire-bar');
+    var hscroller = scrollbars[1],
+        vscroller = scrollbars[0];
+
+    console.log(scrollbars);
+
+    //var vscroller = scrollbars[1];
+    var hScrollConfig = {
+        step: 1,
+        page: 40,
+        rangeStart: 0,
+        rangeStop: 100
+    };
+    var vScrollConfig = {
+        step: 1,
+        page: 40,
+        rangeStart: 0,
+        rangeStop: 100
+    };
+
+    var hValueHolder = {
+        changed: false,
+        getValue: function() {
+            return self.getHScrollValue();
+        },
+        setValue: function(v) {
+            return self.setHScrollValue(v);
+        },
+    };
+
+    // hscroller.setRangeAdapter(new RangeAdapter(hValueHolder, hScrollConfig));
+
+    // var scrollConfigs = {
+    //     vertical: vScrollConfig,
+    //     horizontal: hScrollConfig
+    // };
+
+    // var vValueHolder = {
+    //     getValue: function() {
+    //         return self.getVScrollValue();
+    //     },
+    //     setValue: function(v) {
+    //         return self.setVScrollValue(v);
+    //     },
+    // };
+
+    // vscroller.setRangeAdapter(new RangeAdapter(vValueHolder, vScrollConfig));
+
+
+    // var demoValueSubject = {value: 0};
+    // var demoRA = new RangeAdapter(demoValueSubject, 0, 35, 5);
+    // var sb = document.querySelector('fin-vampire-bar');
+    // console.log(sb);
+    // sb.setRangeAdapter(demoRA);
+
+    </script>
+
+</body>
+</html>

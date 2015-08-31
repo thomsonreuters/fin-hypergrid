@@ -1,0 +1,26 @@
+:host {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+button {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 0px;
+  width: 0px;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  outline: none;
+}
+div.container {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

@@ -1,0 +1,70 @@
+<!--
+
+The `fin-canvas` element is a custom web component canvas control and includes a small ui framework for building custom components that render on the canvas.  This element exists as a generalization on canvas to support the openfin [fin-hypergrid](http://github.com/openfin/fin-hypergrid) component.
+
+@group OpenFin hypergrid
+@element fin-canvas
+@homepage http://github.com/stevewirts/fin-canvas
+-->
+
+<!--
+@event fin-dragstart
+-->
+
+<!--
+@event fin-drag
+-->
+
+<!--
+@event fin-mousemove
+-->
+
+<!--
+@event fin-mousedown
+-->
+
+<!--
+@event fin-dragend
+-->
+
+<!--
+@event fin-mouseup
+-->
+
+<!--
+@event fin-mouseout
+-->
+
+<!--
+@event fin-click
+-->
+
+<!--
+@event fin-dblclick
+-->
+
+<!--
+@event fin-keydown
+-->
+
+<!--
+@event fin-keyup
+-->
+
+<!--
+@event fin-focus-gained
+-->
+
+<!--
+@event fin-focus-lost
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../fin-rectangle/fin-rectangle.html">
+<polymer-element name="fin-canvas">
+  <template>
+    <link rel="stylesheet" href="fin-canvas.css" />
+    <button></button>
+    <canvas class="canvas" on-tap="{{fintap}}" on-hold="{{finhold}}" on-holdpulse="{{finholdpulse}}" on-flick="{{finflick}}" on-release="{{finrelease}}" on-dblclick="{{findblclick}}" on-trackstart="{{fintrackstart}}" on-track="{{fintrack}}" on-trackend="{{fintrackend}}" on-trackend="{{fintrackend}}"></canvas>
+  </template>
+  <script>

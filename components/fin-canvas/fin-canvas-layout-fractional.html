@@ -1,0 +1,49 @@
+<!--
+
+The `fin-canvas-layout-fraction` element is a custom web component canvas control and includes a small ui framework for building custom components that render on the canvas.  This element exists as generalization on canvas to support the openfin [fin-hypergrid](http://github.com/openfin/fin-hypergrid) component.
+
+@group OpenFin hypergrid
+@element fin-canvas-layout-fraction
+@homepage http://github.com/stevewirts/fin-canvas
+-->
+
+<polymer-element name="fin-canvas-layout-fractional">
+  <script>
+
+'use strict';
+
+(function() {
+
+
+    Polymer('fin-canvas-layout-fractional', { /* jshint ignore:line */
+    ready: function() {
+      this.g = document.createElement('fin-rectangle');
+    },
+    layoutComponentsIn: function(rectangle, components) {
+
+        var x = rectangle.left();
+        var y = rectangle.top();
+
+        var totalwidth = rectangle.width();
+        var totalheight = rectangle.height();
+
+        for (var c = 0; c < components.length; c++) {
+            var comp = components[c];
+            var props = comp.getLayoutProperties();
+            if (props) {
+                var xo = x + props[6] * totalwidth + props[7];
+                var yo = y + props[0] * totalheight + props[1];
+                var xe = props[2] * totalwidth + props[3] - xo;
+                var ye = props[4] * totalheight + props[5] - yo;
+                var eachBounds = this.g.rectangle.create(xo, yo, xe, ye);
+                comp.setBounds(eachBounds);
+            }
+        }
+    }
+
+    });
+
+})();
+
+  </script>
+</polymer-element>

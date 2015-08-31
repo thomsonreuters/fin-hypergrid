@@ -1,0 +1,25 @@
+{
+  "name": "fin-vampire-bar",
+  "version": "0.0.0",
+  "authors": [
+    "datamadic <anonymous@example.com>"
+  ],
+  "description": "Element providing solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer"
+  ],
+  "main": "fin-vampire-bar.html",
+  "license": "MIT",
+  "homepage": "https://github.com/datamadic/fin-vampire-bar/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "polymer": "Polymer/polymer#master"
+  }
+}

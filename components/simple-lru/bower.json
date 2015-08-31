@@ -1,0 +1,15 @@
+{
+  "name": "simple-lru",
+  "main": "simple-lru.js",
+  "version": "0.0.3",
+  "homepage": "https://github.com/smagch/simple-lru",
+  "authors": [
+    "smagch <smagch@gmail.com>"
+  ],
+  "description": "minimal Least Recently Used Cache",
+  "keywords": [
+    "cache",
+    "LRU"
+  ],
+  "license": "MIT"
+}

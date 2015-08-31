@@ -1,0 +1,21 @@
+<link rel="import" href="../polymer/polymer.html">
+<polymer-element name="base-e" >
+  <template>
+    <h1>base</h1>
+  </template>
+  <script>
+
+'use strict';
+(function() {
+
+    Polymer('base-e', {
+        created: function() { console.log('base-created') },
+        ready: function() { console.log('base-ready') },
+        attached: function () { console.log('base-attached') },
+        domReady: function() { console.log('base-domReady') },
+    });
+
+})();
+
+  </script>
+</polymer-element>
